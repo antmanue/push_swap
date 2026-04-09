@@ -6,7 +6,7 @@
 /*   By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 15:38:34 by antmanue          #+#    #+#             */
-/*   Updated: 2026/04/09 15:39:07 by antmanue         ###   ########.fr       */
+/*   Updated: 2026/04/09 17:36:31 by antmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,6 @@ int main(int ac, char **av)
     ft_printf("stack A\n");
     debug(&stack_A);
     debug(&stack_B);
-    pb(&stack_B, &stack_A);
-    pb(&stack_B, &stack_A);
     ft_printf("stack A\n");
     debug(&stack_A);
     ft_printf("stack B\n");
