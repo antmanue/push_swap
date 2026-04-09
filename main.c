@@ -6,19 +6,20 @@
 /*   By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 15:38:34 by antmanue          #+#    #+#             */
-/*   Updated: 2026/04/09 11:48:05 by antmanue         ###   ########.fr       */
+/*   Updated: 2026/04/09 15:39:07 by antmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-/* static void debug(char** matriz) {
-    int i = 0;
-    
-    while(matriz[i]) {
-        printf("%s\n", matriz[i]);
-        i++;
+static void debug(t_node **stack)
+{
+    t_node *temp = *stack;
+    while(temp)
+    {
+        ft_printf("%d\n", temp->value);
+        temp = temp->next;
     }
-} */
+}
 
 
 int main(int ac, char **av)
@@ -39,7 +40,21 @@ int main(int ac, char **av)
         matriz = av + 1;
 
     parse_and_fill(matriz, &stack_A);
-    swap(&stack_A);
-    //debug(matriz);
+    ft_printf("stack A\n");
+    debug(&stack_A);
+    debug(&stack_B);
+    pb(&stack_B, &stack_A);
+    pb(&stack_B, &stack_A);
+    ft_printf("stack A\n");
+    debug(&stack_A);
+    ft_printf("stack B\n");
+    debug(&stack_B);
+    pa(&stack_A, &stack_B);
+    ft_printf("stack A\n");
+    debug(&stack_A);
+    ft_printf("stack B\n");
+    debug(&stack_B);
+    
     return(0);
+    
 }

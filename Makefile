@@ -6,7 +6,7 @@
 #    By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/02 15:49:27 by antmanue          #+#    #+#              #
-#    Updated: 2026/04/09 12:47:18 by antmanue         ###   ########.fr        #
+#    Updated: 2026/04/09 15:26:50 by antmanue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME = push_swap
 
 CC = cc
-CFLAGS 		= -Wall -Wextra -Werror
+CFLAGS 		= -Wall -Wextra -Werror -g
 INCLUDES 	= -I./includes
 LIBFT 		= ./libft/libft.a
 PRINTF		= ./ft_printf/libftprintf.a
@@ -33,7 +33,7 @@ VPATH 	+= $(SRC_DIR)/commands
 #--Sources-----------------------------------------------
 
 GENERAL = main.c
-COMMANDS = swap.c
+COMMANDS = swap.c push.c rotate.c reverse_rotate.c
 
 PARSE = parse.c list_nodes.c
 

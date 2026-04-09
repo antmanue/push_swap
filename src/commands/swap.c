@@ -6,7 +6,7 @@
 /*   By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 10:56:18 by antmanue          #+#    #+#             */
-/*   Updated: 2026/04/09 12:48:39 by antmanue         ###   ########.fr       */
+/*   Updated: 2026/04/09 14:02:46 by antmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,13 @@ void sb(t_node **stack_B)
 {
     swap(stack_B);
     ft_printf("sb\n");
+    return;
+}
+
+void ss(t_node **stack_A, t_node **stack_B)
+{
+    swap(stack_A);
+    swap(stack_B);
+    ft_printf("ss\n");
     return;
 }

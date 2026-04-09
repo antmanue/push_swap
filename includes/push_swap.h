@@ -6,7 +6,7 @@
 /*   By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 12:36:50 by antmanue          #+#    #+#             */
-/*   Updated: 2026/04/09 12:40:30 by antmanue         ###   ########.fr       */
+/*   Updated: 2026/04/09 15:06:11 by antmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,13 @@ void    parse_and_fill(char** matriz, t_node **stack_A);
 void swap(t_node** stack);
 void sa(t_node **stack_A);
 void sb(t_node **stack_B);
+
+/*push*/
+void push(t_node **stack_in, t_node **stack_out);
+void pa(t_node **stack_A, t_node **stack_B);
+void pb(t_node **stack_B, t_node **stack_A);
+/*rotate*/
+
+/*reverse_rotate*/
 
 #endif
