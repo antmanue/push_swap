@@ -6,7 +6,7 @@
 #    By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/02 15:49:27 by antmanue          #+#    #+#              #
-#    Updated: 2026/04/09 17:59:08 by antmanue         ###   ########.fr        #
+#    Updated: 2026/04/10 14:35:00 by antmanue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ VPATH 	+= $(SRC_DIR)/commands
 GENERAL = main.c
 COMMANDS = swap.c push.c rotate.c reverse_rotate.c
 
-PARSE = parse.c list_nodes.c
+PARSE = parse.c list_nodes.c sorting.c
 
 #BONUS = 
 
