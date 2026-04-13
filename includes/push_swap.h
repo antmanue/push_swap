@@ -6,7 +6,7 @@
 /*   By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 12:36:50 by antmanue          #+#    #+#             */
-/*   Updated: 2026/04/10 14:40:09 by antmanue         ###   ########.fr       */
+/*   Updated: 2026/04/13 18:33:51 by antmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,12 @@ t_node	*ft_stacklast(t_node *stack);
 void ft_stackclear(t_node **stack);
 
 /*--parse--*/
-int     ft_strisdigit(char* str);
-void    parse_and_fill(char** matriz, t_node **stack_A);
+void errorexit(char *msg, int n);
+void ft_matriz_clear(char **matriz);
+void errorclear(t_node **stack_A, char **matriz, int flag);
+int    is_duplicate(t_node *stack_A, int num);
+int is_valid_syntax(char *matriz);
+void    parse_and_fill(char** matriz, t_node **stack_A, int flag);
 
 /*--swap--*/
 void swap(t_node** stack);

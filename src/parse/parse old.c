@@ -6,12 +6,12 @@
 /*   By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 15:03:41 by antmanue          #+#    #+#             */
-/*   Updated: 2026/04/13 18:33:20 by antmanue         ###   ########.fr       */
+/*   Updated: 2026/04/13 17:19:09 by antmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+#include <stdio.h>
 void errorexit(char *msg, int n)
 {
     write(2, msg, n);
@@ -33,43 +33,56 @@ void ft_matriz_clear(char **matriz)
     free(matriz);
 }
 
-void errorclear(t_node **stack_A, char **matriz, int flag)
+int    ft_isrepeat(t_node **stack_A)
 {
-    if(flag == 1)
+    t_node *temp;
+    t_node *temp2;
+    
+    temp    = *stack_A;
+    while(temp)
     {
-        ft_matriz_clear(matriz);
-    }        
-    ft_stackclear(stack_A);
-    errorexit("Error\n", 6); 
+        temp2 = temp->next;
+        while(temp2)
+        {
+            if (temp->value == temp2->value)
+            {
+                printf("SOU IGUAL!");
+                return(1);
+            }
+            temp2 = temp2->next;
+            printf("nao sou iguaL");
+        }
+        temp = temp->next;
+    }
+    return(0);    
 }
 
-int    is_duplicate(t_node *stack_A, int num)
+void    ft_parse_digit(char *matriz, t_node **stack_A)
 {
-    while(stack_A)
-    {
-        if(stack_A->value == num)
-            return(1);
-        stack_A = stack_A->next;
-    }
-    return(0);
-}   
-int is_valid_syntax(char *matriz)
-{
-     int i;
+    int i;
 
     i = 0;
-    if((matriz[i] == '-' || matriz[0] == '+'))
+    if((matriz[0] == '-' || matriz[0] == '+'))
         i++;
     if(!matriz[i])
-        return(0);
-    while(matriz[i])
     {
-        if(!(matriz[i] >= '0' )|| !(matriz[i] <= '9'))
-            return(0);
-        i++;
+        ft_matriz_clear(&matriz);
+        ft_stackclear(stack_A);
+        errorexit("Error\n", 6);
     }
-    return(1);
+    while(matriz[i])
+    {   
+        if(!(matriz[i] >= '0' && matriz[i] <= '9'))
+        {
+            ft_matriz_clear(&matriz);
+            ft_stackclear(stack_A);
+            errorexit("Error\n", 6); 
+        }      
+        i++;    
+    }
+
 }
+
 void    parse_and_fill(char** matriz, t_node **stack_A, int flag)
 {
     int i;
@@ -77,16 +90,22 @@ void    parse_and_fill(char** matriz, t_node **stack_A, int flag)
     i = 0;
     while(matriz[i])
     {
-        if(0 == is_valid_syntax(matriz[i]))
-                errorclear(stack_A, matriz, flag);
+        ft_parse_digit(matriz[i], stack_A);
         n_matriz = ft_atol(matriz[i]);
+
         if(n_matriz < INT_MIN || n_matriz > INT_MAX)
-           errorclear(stack_A, matriz, flag);
-        if (1 == (is_duplicate(*stack_A, (int)n_matriz)))
-            errorclear(stack_A, matriz, flag);
+        {
+            ft_matriz_clear(matriz);
+            ft_stackclear(stack_A);
+            errorexit("Error\n", 6);
+        }
         ft_add_bottom(stack_A, ft_new_node(n_matriz));
         i++;
     }
-    if(flag == 1)
-        ft_matriz_clear(matriz);
+    ft_matriz_clear(matriz);
+    if (1 == (ft_isrepeat(stack_A)))
+    {
+        ft_stackclear(stack_A);
+        errorexit("Error\n", 6);
+    }
 }

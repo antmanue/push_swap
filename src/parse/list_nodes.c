@@ -6,7 +6,7 @@
 /*   By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 12:50:45 by antmanue          #+#    #+#             */
-/*   Updated: 2026/04/09 10:35:53 by antmanue         ###   ########.fr       */
+/*   Updated: 2026/04/13 12:12:50 by antmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ void ft_stackclear(t_node **stack)
 {
     t_node *temp;
     
-    if(*stack)
+    if(stack && (*stack))
     {
         while(*stack)
         {

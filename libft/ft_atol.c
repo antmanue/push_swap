@@ -6,7 +6,7 @@
 /*   By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 16:47:24 by antmanue          #+#    #+#             */
-/*   Updated: 2026/04/07 16:48:39 by antmanue         ###   ########.fr       */
+/*   Updated: 2026/04/13 10:42:00 by antmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,9 @@ long    ft_atol(const char *nbr)
 	}
 	return (sign * sum);
 }
+/* #include <stdio.h>
+int main(int ac, char **av)
+{
+	(void)ac;
+	printf("%ld\n", ft_atol(av[1]));
+} */
