@@ -6,7 +6,7 @@
 /*   By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 12:36:50 by antmanue          #+#    #+#             */
-/*   Updated: 2026/04/13 18:33:51 by antmanue         ###   ########.fr       */
+/*   Updated: 2026/04/14 15:20:13 by antmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <limits.h>
+#include <stdbool.h>
 #include "../libft/libft.h"
 #include "../ft_printf/ft_printf.h"
 
 typedef struct s_node
 {
     int             value;
+    int             index;
     struct s_node   *next;
     struct s_node   *prev;
 }   t_node;
@@ -34,12 +36,17 @@ int ft_stacksize(t_node *stack);
 t_node	*ft_stacklast(t_node *stack);
 void ft_stackclear(t_node **stack);
 
+/*--sorting--*/
+bool is_sorted(t_node *stack);
+void sort_three(stack_A);
+
+/*COMMANDS*/
 /*--parse--*/
 void errorexit(char *msg, int n);
 void ft_matriz_clear(char **matriz);
 void errorclear(t_node **stack_A, char **matriz, int flag);
-int    is_duplicate(t_node *stack_A, int num);
-int is_valid_syntax(char *matriz);
+bool    is_duplicate(t_node *stack_A, int num);
+bool is_valid_syntax(char *matriz);
 void    parse_and_fill(char** matriz, t_node **stack_A, int flag);
 
 /*--swap--*/
@@ -58,10 +65,11 @@ void ra(t_node **stack_A);
 void rb(t_node **stack_B);
 void rr(t_node **stack_A, t_node **stack_B);
 
-/*--reverse_rotate-*/
+/*--reverse_rotate--*/
 void reverse_rotate(t_node **stack);
 void rra(t_node **stack_A);
 void rrb(t_node **stack_B);
 void rrr(t_node **stack_A, t_node **stack_B);
+
 
 #endif

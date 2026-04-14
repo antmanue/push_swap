@@ -6,25 +6,34 @@
 /*   By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/10 14:34:21 by antmanue          #+#    #+#             */
-/*   Updated: 2026/04/13 10:27:21 by antmanue         ###   ########.fr       */
+/*   Updated: 2026/04/14 15:26:55 by antmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int is_sorted(t_node *stack)
+bool is_sorted(t_node *stack)
 {
     t_node *temp;
     
     if(!stack)
-        return(1);
+        return true;
     temp = stack;
     
     while(temp && temp->next)
     {
         if(temp->value > temp->next->value)
-            return(0);
+            return false;
         temp = temp->next;
     }
-    return(1);
+    return true;
 }
+void sort_three(stack_A)
+{
+    
+}
+void sort_five(stack_A)
+{
+    
+}
+

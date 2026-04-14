@@ -6,7 +6,7 @@
 #    By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/02 15:49:27 by antmanue          #+#    #+#              #
-#    Updated: 2026/04/10 14:35:00 by antmanue         ###   ########.fr        #
+#    Updated: 2026/04/14 14:17:27 by antmanue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,20 +28,22 @@ OBJ_DIR = obj
 VPATH   = $(SRC_DIR)
 VPATH   += $(SRC_DIR)/parse
 VPATH 	+= $(SRC_DIR)/commands
+VPATH 	+= $(SRC_DIR)/sort
 
 
 #--Sources-----------------------------------------------
 
 GENERAL = main.c
 COMMANDS = swap.c push.c rotate.c reverse_rotate.c
-
 PARSE = parse.c list_nodes.c sorting.c
+SORT = sorting.c index_tools.c
 
 #BONUS = 
 
 SRC = $(GENERAL)
 SRC += $(PARSE)
 SRC += $(COMMANDS)
+SRC += $(SORT)
 
 OBJ		= $(SRC:%.c=$(OBJ_DIR)/%.o)
 
@@ -79,6 +81,7 @@ clean:
 fclean: clean
 		$(RM) $(NAME)
 		$(MAKE) fclean -C ./libft
+		$(MAKE) fclean -C ./ft_printf
 
 re: fclean all
 
