@@ -6,7 +6,7 @@
 /*   By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 12:36:50 by antmanue          #+#    #+#             */
-/*   Updated: 2026/04/14 15:20:13 by antmanue         ###   ########.fr       */
+/*   Updated: 2026/04/15 16:17:55 by antmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,14 @@ void ft_stackclear(t_node **stack);
 
 /*--sorting--*/
 bool is_sorted(t_node *stack);
-void sort_three(stack_A);
+void sort_three(t_node *stack_A);
+void sort_five(t_node *stack_A);
+void radix_sort(t_node *stack_A, t_node *stack_B);
+
+/*--index--*/
+t_node *ft_stackcopy(t_node *stack_A);
+void ft_sort_copy(t_node *stack_copy);
+
 
 /*COMMANDS*/
 /*--parse--*/

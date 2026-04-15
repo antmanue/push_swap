@@ -1,39 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting.c                                          :+:      :+:    :+:   */
+/*   radix.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/10 14:34:21 by antmanue          #+#    #+#             */
-/*   Updated: 2026/04/15 16:16:27 by antmanue         ###   ########.fr       */
+/*   Created: 2026/04/15 15:59:22 by antmanue          #+#    #+#             */
+/*   Updated: 2026/04/15 16:11:06 by antmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-bool is_sorted(t_node *stack)
+void radix_sort(t_node *stack_A, t_node *stack_B)
 {
-    t_node *temp;
-    
-    if(!stack)
-        return true;
-    temp = stack;
-    
-    while(temp && temp->next)
-    {
-        if(temp->value > temp->next->value)
-            return false;
-        temp = temp->next;
-    }
-    return true;
-}
-void sort_three(t_node *stack_A)
-{
-    
-}
-void sort_five(t_node *stack_A)
-{
-    
-}
 
+}
