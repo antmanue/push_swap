@@ -6,7 +6,7 @@
 /*   By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/10 14:34:21 by antmanue          #+#    #+#             */
-/*   Updated: 2026/04/16 14:04:18 by antmanue         ###   ########.fr       */
+/*   Updated: 2026/04/16 14:23:12 by antmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,24 @@ void sort_four(t_node **stack_A, t_node **stack_B)
 }
 void sort_five(t_node **stack_A, t_node **stack_B)
 {
+    int push_count;
+    
+    push_count = 0;
+    while(push_count < 2)
+    {
+        if((*stack_A)->index < 2)
+        {
+            pb(stack_B, stack_A);
+            push_count++;
+        }
+        else
+            ra(stack_A);
+    }
+    sort_three(stack_A);
+    if((ft_stacksize(stack_B) == 2) && (*stack_B)->index == 0)
+        sb(stack_B);
+    pa(stack_A,stack_B);
+    pa(stack_A,stack_B);
     
 }
 
