@@ -6,7 +6,7 @@
 /*   By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/10 14:34:21 by antmanue          #+#    #+#             */
-/*   Updated: 2026/04/16 12:30:18 by antmanue         ###   ########.fr       */
+/*   Updated: 2026/04/16 14:04:18 by antmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,16 @@ void sort_three(t_node **stack_A)
         sa(stack_A);
     
 }
-/* void sort_four(t_node **stack_A, t_node **stack_B)
+void sort_four(t_node **stack_A, t_node **stack_B)
 {
-    if(stack_B->index == 0)
-        pb(stack_A, stack_B);
-    
-} */
-/* void sort_five(t_node **stack_A, t_node **stack_B)
+    while((*stack_A)->index != 0)
+            ra(stack_A);
+        pb(stack_B, stack_A);
+        sort_three(stack_A);
+        pa(stack_A, stack_B);
+}
+void sort_five(t_node **stack_A, t_node **stack_B)
 {
     
-} */
+}
 
