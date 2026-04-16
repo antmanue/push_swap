@@ -6,7 +6,7 @@
 /*   By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/10 14:34:21 by antmanue          #+#    #+#             */
-/*   Updated: 2026/04/15 16:16:27 by antmanue         ###   ########.fr       */
+/*   Updated: 2026/04/16 12:30:18 by antmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,39 @@ bool is_sorted(t_node *stack)
     }
     return true;
 }
-void sort_three(t_node *stack_A)
+void sort_three(t_node **stack_A)
 {
+    int top;
+    int mid;
+    int bot;
+
+    top = (*stack_A)->index;
+    mid = (*stack_A)->next->index;
+    bot = (*stack_A)->next->next->index;
+    if (top > mid && top > bot)
+        {
+            ra(stack_A);
+            if(mid > bot)
+                sa(stack_A);
+        }
+    else if(mid > top && mid > bot)
+        {
+            rra(stack_A);
+            if(bot > top)
+                sa(stack_A);
+        }
+    else
+        sa(stack_A);
     
 }
-void sort_five(t_node *stack_A)
+/* void sort_four(t_node **stack_A, t_node **stack_B)
+{
+    if(stack_B->index == 0)
+        pb(stack_A, stack_B);
+    
+} */
+/* void sort_five(t_node **stack_A, t_node **stack_B)
 {
     
-}
+} */
 

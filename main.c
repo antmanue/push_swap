@@ -6,7 +6,7 @@
 /*   By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 15:38:34 by antmanue          #+#    #+#             */
-/*   Updated: 2026/04/15 16:13:08 by antmanue         ###   ########.fr       */
+/*   Updated: 2026/04/16 12:28:43 by antmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void debug(t_node **stack)
 } */
 #include "push_swap.h"
 
-void sort_stack(t_node **stack_A, t_node **stack_B)
+/* void sort_stack(t_node **stack_A, t_node **stack_B)
 {
     int len;
     (void)stack_B;
@@ -32,7 +32,7 @@ void sort_stack(t_node **stack_A, t_node **stack_B)
         
         if(len == 2)
             sa(stack_A);
-        /* else if(len == 3)
+        else if(len == 3)
             sort_three(*stack_A);
 
         else if(len <= 5)
@@ -40,9 +40,9 @@ void sort_stack(t_node **stack_A, t_node **stack_B)
         else
         {
             radix_sort(*stack_A, *stack_B);
-        } */
+        }
     } 
-}
+} */
 
 int main(int ac, char **av)
 {
@@ -66,7 +66,7 @@ int main(int ac, char **av)
     else
         matriz = av + 1;
     parse_and_fill(matriz, &stack_A, is_split);
-    sort_stack(&stack_A, &stack_B);
+    /* ft_init_index(stack_A); */
     ft_stackclear(&stack_A);
     return(0);
     

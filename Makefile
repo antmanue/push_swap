@@ -6,7 +6,7 @@
 #    By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/02 15:49:27 by antmanue          #+#    #+#              #
-#    Updated: 2026/04/15 16:11:33 by antmanue         ###   ########.fr        #
+#    Updated: 2026/04/16 12:29:55 by antmanue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,9 +34,15 @@ VPATH 	+= $(SRC_DIR)/sort
 #--Sources-----------------------------------------------
 
 GENERAL = main.c
-COMMANDS = swap.c push.c rotate.c reverse_rotate.c
-PARSE = parse.c list_nodes.c sorting.c
-SORT = sorting.c index_tools.c
+COMMANDS = swap.c
+COMMANDS += push.c
+COMMANDS += rotate.c
+COMMANDS += reverse_rotate.c
+PARSE = parse.c
+PARSE += list_nodes.c
+SORT += sorting.c 
+#SORT += index_tools.c
+#SORT += radix.c
 
 #BONUS = 
 
