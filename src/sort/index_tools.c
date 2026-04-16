@@ -6,7 +6,7 @@
 /*   By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 12:27:55 by antmanue          #+#    #+#             */
-/*   Updated: 2026/04/15 16:02:23 by antmanue         ###   ########.fr       */
+/*   Updated: 2026/04/16 11:28:46 by antmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,29 @@ void ft_sort_copy(t_node *stack_copy)
             }
             temp = temp->next;
         }
+    }
+}
+void ft_indexation(t_node *stack_A,t_node *stack_copy)
+{
+    t_node *temp_A;
+    t_node *temp_copy;
+    int count;
+
+    temp_A = stack_A;
+    while(temp_A)
+    {
+        temp_copy = stack_copy;
+        count = 0;
+        while(temp_copy)
+        {
+            if(temp_A->value == temp_copy->value)
+            {
+                temp_A->index = count;
+                break;
+            }
+            count++;
+            temp_copy = temp_copy->next;            
+        }
+        temp_A = temp_A->next;
     }
 }
