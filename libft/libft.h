@@ -6,7 +6,7 @@
 /*   By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:03:03 by antmanue          #+#    #+#             */
-/*   Updated: 2026/04/07 16:50:10 by antmanue         ###   ########.fr       */
+/*   Updated: 2026/04/17 11:25:13 by antmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-int		ft_strisdigit(char* str);
-long    ft_atol(const char *nbr);
+int		ft_strisdigit(char *str);
+long	ft_atol(const char *nbr);
 
 #endif

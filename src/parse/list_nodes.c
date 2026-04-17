@@ -6,7 +6,7 @@
 /*   By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 12:50:45 by antmanue          #+#    #+#             */
-/*   Updated: 2026/04/13 12:12:50 by antmanue         ###   ########.fr       */
+/*   Updated: 2026/04/17 11:03:07 by antmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,17 @@
  * @param nb (value)
  * @return t_node* (new_node)
  */
-t_node *ft_new_node(long nb)
+t_node	*ft_new_node(long nb)
 {
-    t_node  *new_node;
-    
-    new_node = malloc(sizeof(t_node));
-    
-    if(!new_node)
-        return(NULL);
+	t_node	*new_node;
 
-    new_node->value = nb;
-    new_node->next = NULL;
-    new_node->prev = NULL;
-
-    return(new_node);
+	new_node = malloc(sizeof(t_node));
+	if (!new_node)
+		return (NULL);
+	new_node->value = nb;
+	new_node->next = NULL;
+	new_node->prev = NULL;
+	return (new_node);
 }
 
 /**
@@ -46,9 +43,9 @@ t_node *ft_new_node(long nb)
  */
 t_node	*ft_stacklast(t_node *stack)
 {
-    t_node *temp;
-    temp = stack;
-    
+	t_node	*temp;
+
+	temp = stack;
 	if (!stack)
 		return (NULL);
 	while (temp->next)
@@ -70,54 +67,51 @@ t_node	*ft_stacklast(t_node *stack)
  * @param stack (lista recebida)
  * @param new_node (node a adicionar)
  */
-void ft_add_bottom(t_node **stack, t_node *new_node)
+void	ft_add_bottom(t_node **stack, t_node *new_node)
 {
-    t_node *temp;
-    temp = *stack;
+	t_node	*temp;
 
-    if(!stack || !new_node)
-        return;
-    if(*stack == NULL)
-    {
-        *stack = new_node;
-        return;
-    }
-   
-    temp = ft_stacklast(*stack);
-    new_node->prev = temp;
-    temp->next = new_node;
+	temp = *stack;
+	if (!stack || !new_node)
+		return ;
+	if (*stack == NULL)
+	{
+		*stack = new_node;
+		return ;
+	}
+	temp = ft_stacklast(*stack);
+	new_node->prev = temp;
+	temp->next = new_node;
 }
 
-int ft_stacksize(t_node *stack)
+int	ft_stacksize(t_node *stack)
 {
-    size_t count;
-    t_node *temp;
+	size_t	count;
+	t_node	*temp;
 
-    if(!stack)
-        return(0);
-    
-    count = 0;
-    temp = stack;
-    
-    while(temp)
-    {
-        count++;
-        temp = temp->next;
-    }
-    return(count);
+	if (!stack)
+		return (0);
+	count = 0;
+	temp = stack;
+	while (temp)
+	{
+		count++;
+		temp = temp->next;
+	}
+	return (count);
 }
 
-void ft_stackclear(t_node **stack)
+void	ft_stackclear(t_node **stack)
 {
-    t_node *temp;
-    
-    if(stack && (*stack))
-    {
-        while(*stack)
-        {
-            temp = (*stack)->next; 
-            free(*stack);
-            *stack = temp;
-        }   
-    }
+	t_node	*temp;
+
+	if (stack && (*stack))
+	{
+		while (*stack)
+		{
+			temp = (*stack)->next;
+			free(*stack);
+			*stack = temp;
+		}
+	}
 }

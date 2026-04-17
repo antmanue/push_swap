@@ -6,16 +6,16 @@
 /*   By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 16:47:24 by antmanue          #+#    #+#             */
-/*   Updated: 2026/04/13 10:42:00 by antmanue         ###   ########.fr       */
+/*   Updated: 2026/04/17 11:50:11 by antmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long    ft_atol(const char *nbr)
+long	ft_atol(const char *nbr)
 {
-	long    sum;
-	long    sign;
+	long	sum;
+	long	sign;
 
 	sum = 0;
 	sign = 1;
@@ -34,6 +34,7 @@ long    ft_atol(const char *nbr)
 	}
 	return (sign * sum);
 }
+
 /* #include <stdio.h>
 int main(int ac, char **av)
 {

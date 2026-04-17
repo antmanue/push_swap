@@ -6,44 +6,45 @@
 /*   By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 17:39:29 by antmanue          #+#    #+#             */
-/*   Updated: 2026/04/10 14:08:08 by antmanue         ###   ########.fr       */
+/*   Updated: 2026/04/17 10:54:03 by antmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void rotate(t_node **stack)
+void	rotate(t_node **stack)
 {
-    t_node *last_node;
-    t_node *first;
-    t_node *second;
-    
-    if(!(*stack) || !((*stack)->next))
-        return;
+	t_node	*last_node;
+	t_node	*first;
+	t_node	*second;
 
-    first = *stack;
-    second = (*stack)->next;
-    last_node = ft_stacklast(*stack);
-    
-    *stack = (*stack)->next; 
-    second->prev = NULL;
-    last_node->next = first;
-    first->prev = last_node;
-    first->next = NULL;
+	if (!(*stack) || !((*stack)->next))
+		return ;
+	first = *stack;
+	second = (*stack)->next;
+	last_node = ft_stacklast(*stack);
+	*stack = (*stack)->next;
+	second->prev = NULL;
+	last_node->next = first;
+	first->prev = last_node;
+	first->next = NULL;
 }
-void ra(t_node **stack_A)
+
+void	ra(t_node **stack_a)
 {
-    rotate(stack_A);
-    ft_printf("ra\n");
+	rotate(stack_a);
+	ft_printf("ra\n");
 }
-void rb(t_node **stack_B)
+
+void	rb(t_node **stack_b)
 {
-    rotate(stack_B);
-    ft_printf("rb\n");
+	rotate(stack_b);
+	ft_printf("rb\n");
 }
-void rr(t_node **stack_A, t_node **stack_B)
+
+void	rr(t_node **stack_a, t_node **stack_b)
 {
-    rotate(stack_A);
-    rotate(stack_B);
-    ft_printf("rr\n");
+	rotate(stack_a);
+	rotate(stack_b);
+	ft_printf("rr\n");
 }

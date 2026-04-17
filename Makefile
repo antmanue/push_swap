@@ -6,7 +6,7 @@
 #    By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/02 15:49:27 by antmanue          #+#    #+#              #
-#    Updated: 2026/04/16 16:32:42 by antmanue         ###   ########.fr        #
+#    Updated: 2026/04/17 11:12:14 by antmanue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ PARSE += list_nodes.c
 SORT += sorting.c 
 SORT += index_tools.c
 SORT += radix.c
+UTILS = clear.c
 
 #BONUS = 
 
@@ -50,6 +51,7 @@ SRC = $(GENERAL)
 SRC += $(PARSE)
 SRC += $(COMMANDS)
 SRC += $(SORT)
+SRC += $(UTILS)
 
 OBJ		= $(SRC:%.c=$(OBJ_DIR)/%.o)
 

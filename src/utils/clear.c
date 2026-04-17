@@ -1,21 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   clear.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/07 15:58:52 by antmanue          #+#    #+#             */
-/*   Updated: 2026/04/17 11:47:13 by antmanue         ###   ########.fr       */
+/*   Created: 2026/04/17 11:09:59 by antmanue          #+#    #+#             */
+/*   Updated: 2026/04/17 11:12:34 by antmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+#include "push_swap.h"
+
+void	errorexit(char *msg, int n)
+{
+	write(2, msg, n);
+	exit(1);
+}
+
+void	ft_matriz_clear(char **matriz)
 {
 	int	i;
 
 	i = 0;
-	while (s1[i] && s2[i] && s1[i] == s2[i])
-		i++;
-	return (s1[i] - s2[i]);
+	if (!matriz || !(matriz[i]))
+		return ;
+	while (matriz[i])
+	{
+		free(matriz[i]);
+		i++ ;
+	}
+	free(matriz);
+}
+
+void	errorclear(t_node **stack_a, char **matriz, int flag)
+{
+	if (flag == 1)
+	{
+		ft_matriz_clear(matriz);
+	}
+	ft_stackclear(stack_a);
+	errorexit("Error\n", 6);
 }

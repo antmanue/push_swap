@@ -5,81 +5,79 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/02 12:36:50 by antmanue          #+#    #+#             */
-/*   Updated: 2026/04/16 16:33:14 by antmanue         ###   ########.fr       */
+/*   Created: 2026/04/17 11:16:18 by antmanue          #+#    #+#             */
+/*   Updated: 2026/04/17 11:23:23 by antmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <limits.h>
-#include <stdbool.h>
-#include "../libft/libft.h"
-#include "../ft_printf/ft_printf.h"
+# include <stdlib.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <limits.h>
+# include <stdbool.h>
+# include "../libft/libft.h"
+# include "../ft_printf/ft_printf.h"
 
 typedef struct s_node
 {
-    int             value;
-    int             index;
-    struct s_node   *next;
-    struct s_node   *prev;
-}   t_node;
+	int				value;
+	int				index;
+	struct s_node	*next;
+	struct s_node	*prev;
+}	t_node;
 
 /*--stack_&_list--s*/
-t_node *ft_new_node(long nb);
-void ft_add_bottom(t_node **stack, t_node *new_node);
-int ft_stacksize(t_node *stack);
+t_node	*ft_new_node(long nb);
+void	ft_add_bottom(t_node **stack, t_node *new_node);
+int		ft_stacksize(t_node *stack);
 t_node	*ft_stacklast(t_node *stack);
-void ft_stackclear(t_node **stack);
+void	ft_stackclear(t_node **stack);
 
 /*--sorting--*/
-bool is_sorted(t_node *stack);
-void sort_three(t_node **stack_A);
-void sort_four(t_node **stack_A, t_node **stack_B);
-void sort_five(t_node **stack_A, t_node **stack_B);
-void radix_sort(t_node **stack_A, t_node **stack_B);
+bool	is_sorted(t_node *stack);
+void	sort_three(t_node **stack_a);
+void	sort_four(t_node **stack_a, t_node **stack_b);
+void	sort_five(t_node **stack_a, t_node **stack_b);
+void	radix_sort(t_node **stack_a, t_node **stack_b);
 
 /*--index--*/
-t_node *ft_stackcopy(t_node *stack_A);
-void    ft_sort_copy(t_node *stack_copy);
-void ft_indexation(t_node *stack_A,t_node *stack_copy);
-void ft_init_index(t_node *stack_A);
-
+t_node	*ft_stackcopy(t_node *stack_a);
+void	ft_sort_copy(t_node *stack_copy);
+void	ft_indexation(t_node *stack_a, t_node *stack_copy);
+void	ft_init_index(t_node *stack_a);
 
 /*COMMANDS*/
 /*--parse--*/
-void errorexit(char *msg, int n);
-void ft_matriz_clear(char **matriz);
-void errorclear(t_node **stack_A, char **matriz, int flag);
-bool    is_duplicate(t_node *stack_A, int num);
-bool is_valid_syntax(char *matriz);
-void    parse_and_fill(char** matriz, t_node **stack_A, int flag);
+void	errorexit(char *msg, int n);
+void	ft_matriz_clear(char **matriz);
+void	errorclear(t_node **stack_a, char **matriz, int flag);
+bool	is_duplicate(t_node *stack_a, int num);
+bool	is_valid_syntax(char *matriz);
+void	parse_and_fill(char **matriz, t_node **stack_a, int flag);
 
 /*--swap--*/
-void swap(t_node** stack);
-void sa(t_node **stack_A);
-void sb(t_node **stack_B);
+void	swap(t_node **stack);
+void	sa(t_node **stack_a);
+void	sb(t_node **stack_b);
 
 /*--push--*/
-void push(t_node **stack_in, t_node **stack_out);
-void pa(t_node **stack_A, t_node **stack_B);
-void pb(t_node **stack_B, t_node **stack_A);
+void	push(t_node **stack_in, t_node **stack_out);
+void	pa(t_node **stack_a, t_node **stack_b);
+void	pb(t_node **stack_b, t_node **stack_a);
 
 /*--rotate--*/
-void rotate(t_node **stack);
-void ra(t_node **stack_A);
-void rb(t_node **stack_B);
-void rr(t_node **stack_A, t_node **stack_B);
+void	rotate(t_node **stack);
+void	ra(t_node **stack_a);
+void	rb(t_node **stack_b);
+void	rr(t_node **stack_a, t_node **stack_b);
 
 /*--reverse_rotate--*/
-void reverse_rotate(t_node **stack);
-void rra(t_node **stack_A);
-void rrb(t_node **stack_B);
-void rrr(t_node **stack_A, t_node **stack_B);
-
+void	reverse_rotate(t_node **stack);
+void	rra(t_node **stack_a);
+void	rrb(t_node **stack_b);
+void	rrr(t_node **stack_a, t_node **stack_b);
 
 #endif
