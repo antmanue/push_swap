@@ -29,6 +29,11 @@ Run the program with a list of integers as arguments. The first argument is at t
 ```bash
 ./push_swap 2 1 3 6 5 8
 ```
+Or:
+
+```bash
+./push_swap "2 1 3 6 5 8"
+```
 
 The program will output a sequence of instructions (one per line) to sort the stack in ascending order, with the smallest number at the top.
 
@@ -63,6 +68,26 @@ For minimal project validation (which implies a minimum grade of 80%):
 11500 operations.
 - 100 numbers in under 1300 operations and 500 numbers in under
 5500 operations.
+
+You can use this shell command with any range and number of values:
+```bash
+ARG=$(shuf -i MIN-MAX -n COUNT | tr "\n" " ")
+./push_swap $ARG
+```
+Replace `MIN`, `MAX`, and `COUNT` with the numeric range and amount of values you want to generate. Have into account that `COUNT` must be equal or lower than `MAX`-`MIN`.
+
+Example:
+```bash
+ARG=$(shuf -i 0-999 -n 100 | tr "\n" " ")
+./push_swap $ARG
+```
+
+To count the number of operations produced by `push_swap`:
+```bash
+ARG=$(shuf -i MIN-MAX -n COUNT | tr "\n" " ")
+./push_swap $ARG | wc -l
+```
+
 
 ## Resources
 
