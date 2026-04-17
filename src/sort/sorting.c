@@ -6,7 +6,7 @@
 /*   By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/10 14:34:21 by antmanue          #+#    #+#             */
-/*   Updated: 2026/04/17 11:45:22 by antmanue         ###   ########.fr       */
+/*   Updated: 2026/04/17 12:30:41 by antmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ void	sort_three(t_node **stack_a)
 		if (bot > top)
 			sa(stack_a);
 	}
+	else if(top > mid && top < bot)
+		sa(stack_a);
 }
 
 void	sort_four(t_node **stack_a, t_node **stack_b)

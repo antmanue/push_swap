@@ -6,7 +6,7 @@
 #    By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/02 15:49:27 by antmanue          #+#    #+#              #
-#    Updated: 2026/04/17 11:12:14 by antmanue         ###   ########.fr        #
+#    Updated: 2026/04/17 12:15:01 by antmanue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ VPATH   = $(SRC_DIR)
 VPATH   += $(SRC_DIR)/parse
 VPATH 	+= $(SRC_DIR)/commands
 VPATH 	+= $(SRC_DIR)/sort
+VPATH 	+= $(SRC_DIR)/utils
 
 
 #--Sources-----------------------------------------------

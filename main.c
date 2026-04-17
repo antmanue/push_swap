@@ -1,16 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main(final).c                                      :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 15:38:34 by antmanue          #+#    #+#             */
-/*   Updated: 2026/04/17 09:57:49 by antmanue         ###   ########.fr       */
+/*   Updated: 2026/04/17 12:26:43 by antmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	debug(t_node **stack)
+{
+	t_node	*temp;
+
+	temp = *stack;
+	while (temp)
+	{
+		ft_printf("%d\n", temp->value);
+		temp = temp->next;
+	}
+}
 
 void	sort_stack(t_node **stack_a, t_node **stack_b)
 {
@@ -52,6 +64,7 @@ int	main(int ac, char **av)
 		matriz = av + 1;
 	parse_and_fill(matriz, &stack_a, is_split);
 	sort_stack(&stack_a, &stack_b);
+	debug(&stack_a);
 	ft_stackclear(&stack_a);
 	return (0);
 }
