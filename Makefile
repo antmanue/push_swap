@@ -6,7 +6,7 @@
 #    By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/02 15:49:27 by antmanue          #+#    #+#              #
-#    Updated: 2026/04/17 12:15:01 by antmanue         ###   ########.fr        #
+#    Updated: 2026/04/17 15:42:15 by antmanue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,10 +85,13 @@ $(NAME): $(OBJ) $(LIBFT) $(PRINTF)
 
 clean:
 		$(RM) $(OBJ) $(BONUS_OBJS) .bonus
+		$(RM) -rf $(OBJ_DIR)
 		$(MAKE) clean -C ./libft
+		$(MAKE) clean -C ./ft_printf
 		
 fclean: clean
 		$(RM) $(NAME)
+		$(RM) -rf $(OBJ_DIR)
 		$(MAKE) fclean -C ./libft
 		$(MAKE) fclean -C ./ft_printf
 

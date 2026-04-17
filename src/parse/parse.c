@@ -6,7 +6,7 @@
 /*   By: antmanue <antmanue@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 15:03:41 by antmanue          #+#    #+#             */
-/*   Updated: 2026/04/17 11:10:49 by antmanue         ###   ########.fr       */
+/*   Updated: 2026/04/17 14:18:45 by antmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,8 @@ void	parse_and_fill(char **matriz, t_node **stack_a, int flag)
 	if (flag == 1)
 		ft_matriz_clear(matriz);
 	if (true == is_sorted(*stack_a))
+	{
+		ft_stackclear(stack_a);
 		exit(1);
+	}
 }

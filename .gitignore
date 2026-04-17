@@ -1,0 +1,5 @@
+*.o
+*.pdf
+./push_swap
+./checker_linux
+obj/
