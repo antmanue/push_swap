@@ -1,0 +1,5 @@
+ARG="1 5 2 4 3"; ./push_swap $ARG | ./checker_linux $ARG
+
+ARG=$(shuf -i MIN-MAX -n COUNT | tr "\n" " ")
+./push_swap $ARG
+
